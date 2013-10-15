@@ -6,10 +6,13 @@ $uuid = array_pop($urlsplit)."";
 $root = "/".join($urlsplit,"/");
 
 ?>
-<html lang="en" dir="ltr" ng-app="myApp" >
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="myApp" lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!--[if lte IE 8]><script src="<?php echo $root;?>/js/json2.js"></script><![endif]-->
 
 	<!-- font -->
 	<style type="text/css">.tk-museo-sans{font-family:"museo-sans",sans-serif;}</style>
