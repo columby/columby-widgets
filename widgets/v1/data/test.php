@@ -6,7 +6,7 @@
 </head>
 <body>
 	
-	<iframe src='preview/6cd477ff-43ed-4984-b64c-405012d94688/' style='border:1px solid #eee;width:800px;height:700px;margin:50px auto;display:block;'></iframe>
+	<iframe src='preview/6cd477ff-43ed-4984-b64c-405012d94688/' style='border:1px solid #eee;width:600px;height:800px;margin:50px auto;display:block;'></iframe>
 
 </body>
 </html>

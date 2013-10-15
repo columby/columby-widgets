@@ -9,25 +9,48 @@ app.config(function($routeProvider, $locationProvider) {
 })
 
 app.run(function($rootScope,$http,$timeout){
-	jQuery("#message").hide();
+
+	if(typeof Drupal!="undefined"){
+		$rootScope.root = Drupal.settings.basePath;
+	} else {
+		if(window.location.hostname.match("localhost")){
+			$rootScope.root = "/columby/api/"
+		} else {
+			$rootScope.root = "/";
+		}
+	}
+
+	$rootScope.uuid = jQuery(".iati").attr("uuid");
+
+	$http.get($rootScope.root+"api/v1/cms/"+$rootScope.uuid+".json").success(function(data){
+		$rootScope.loaded = true;
+		if(data.data){
+			$rootScope.title = data.data.title;
+			$rootScope.download = data.data.data_file;
+			$rootScope.download_text = "Download";
+			$rootScope.link_to_columby = $rootScope.root+"explore/dataset/"+data.data.nid;
+			$rootScope.error = false;
+		} else {
+			$rootScope.error = true;
+			$rootScope.error_message = "Something went wrong loading the data.";
+		}
+	}).error(function(){
+		$rootScope.loaded = true;
+		$rootScope.error = true;
+		$rootScope.error_message = "Something went wrong loading the data.";
+	})
+
 })
 
-app.controller("iati",function($http,$scope){
+app.controller("iati",function($http,$scope,$rootScope){
 	
 	$scope.node = {};
 
-	if(typeof Drupal!="undefined"){
-		$scope.root = Drupal.settings.basePath;
-	} else {
-		$scope.root = "/"
-	}
-	$scope.uuid = jQuery("#table-js").attr("uuid");
+	$scope.uuid = jQuery(".iati").attr("uuid");
 	$scope.apiurl = $scope.root+"api/v1/data/"+$scope.uuid;
-
-	$http.get($scope.root+"api/v1/cms/"+jQuery("#table-js").attr("uuid")+".json").success(function(data){
-		console.log(jQuery("#head h1").text(data.data.title));
-	})
 	
+	$rootScope.loading = "Test";
+
 	$scope.loading = true;
 	$scope.actloading = true;
 
