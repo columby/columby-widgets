@@ -2,10 +2,13 @@
 body,table{font-family:"museo-sans","Helvetica Neue",Arial,Helvetica,Geneva,sans-serif;font-size:13px;}
 body,html{background:#eee;}
 a{color:#000;text-decoration:underline;display:block;margin:1em 4em;}
-#head{background:#333;color:#fff;padding:0;line-height:1.5em;font-size:15px;text-align:left;position:fixed;width:100%;top:0px;height:50px;}#head #spinner{background:url("images/activity_indicator_333.gif") no-repeat center;background-size:50%;width:50px;height:50px;position:absolute;}
-#head h1{display:inline-block;font-size:15px;line-height:50px;margin:0;margin-left:1em;}
-#head a{display:inline-block;color:#999;margin:0 1em;font-weight:100;}#head a:hover{color:#fff;}
-#head #logo{position:absolute;top:0px;right:20px;height:100%;width:140px;background:url("images/logo_columby.png") no-repeat center right;background-size:auto 50%;}
+#top,#bottom{position:fixed;height:5px;width:100%;margin:0;padding:0;background:url("images/header-bg-dataset.png") repeat;}
+#top{top:0px;}
+#bottom{bottom:0px;}
+#head{background:#333;color:#fff;padding:0;line-height:1.5em;font-size:15px;text-align:left;position:fixed;width:100%;top:5px;height:50px;}#head #spinner{background:url("images/activity_indicator_333.gif") no-repeat center;background-size:50%;width:50px;height:50px;position:absolute;}
+#head h1{display:inline-block;font-size:15px;line-height:50px;margin:0 1em 0 1em;}
+#head a{display:inline-block;color:#999;margin:0 .2em;font-weight:100;text-decoration:none;}#head a:hover{color:#fff;}
+#head #logo{position:absolute;top:15%;right:20px;height:70%;width:140px;background:url("images/logo_columby.png") no-repeat center right;background-size:auto 50%;}
 #error{margin-top:100px;text-align:center;}
 .iati{margin-top:60px;max-width:800px;margin:0 auto;}.iati .iati-frame{margin:60px 10px 20px 10px;overflow-x:hidden;background:transparent;width:auto;}.iati .iati-frame .spinner{background:#ffffff url("images/activity_indicator.gif") no-repeat center;background-size:50%;width:30px;height:30px;}
 .iati .iati-frame table{width:100%;background:transparent;border:1px solid #eee;margin:0;}.iati .iati-frame table tbody{width:auto;}

@@ -58,7 +58,6 @@ app.controller("iati",function($http,$scope,$rootScope){
 		$scope.info = data;
 		$scope.loading = false;
 	}).error(function(){
-		console.log("error");
 		$scope.loading = false;
 	});
 		
@@ -67,7 +66,6 @@ app.controller("iati",function($http,$scope,$rootScope){
 		$scope.node.sub = data.data;
 		$scope.actloading = false;
 	}).error(function(){
-		console.log("error");
 		$scope.actloading = false;
 	});
 
@@ -83,7 +81,6 @@ app.controller("iati",function($http,$scope,$rootScope){
 				$scope.node.sub = data.data;
 				$scope.actloading = false;
 			}).error(function(){
-				console.log("error");
 				$scope.actloading = false;
 			});
 		}
@@ -130,7 +127,6 @@ app.directive("open",function($http,$timeout){
 						$timeout(function(){scope.$apply();},0);
 					}).error(function(){
 						scope.node.loading = false;
-						console.log("error");
 					});
 				}
 			})

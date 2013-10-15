@@ -21,12 +21,13 @@ $root = "/".join($urlsplit,"/");
 
 </head>
 <body>
-
+	<div id='top'></div>
 	<div id='head'>
 		<div id='spinner' ng-hide='loaded'></div>
 		<h1>{{title}}</h1>
-		<a href='' ng-href='{{download}}' ng-model='download_text'>{{download_text}} <i class="icon-download" ng-show="download_text"></i></a>
-		<a href='' ng-href='{{link_to_columby}}' target="_blank"><div id='logo'></div></a>
+		<a href='' ng-href='{{download}}' ng-model='download_text' class="icon-download"></a>
+		<a href='' ng-href='{{link_to_columby}}' target="_blank" ng-model='download_text' class="icon-link-ext"></a>
+		<a href='' ng-href='http://www.columby.com' target="_blank"><div id='logo'></div></a>
 	</div>
 
 	<div id='error' ng-show='error'>
@@ -82,7 +83,7 @@ $root = "/".join($urlsplit,"/");
 </div>
 </div>
 </div>
-
+<div id="bottom"></div>
 
 
 <script type='text/ng-template' id='row.html'>
@@ -125,6 +126,8 @@ $root = "/".join($urlsplit,"/");
 <script src="<?php echo $root;?>/js/jquery.min.js"></script>
 <script src="<?php echo $root;?>/js/angular.min.js"></script>
 <script src="<?php echo $root;?>/js/angular-iati.js"></script>
+
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-29039425-10"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
 
 </body>
 </html>

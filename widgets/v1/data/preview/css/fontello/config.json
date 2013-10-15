@@ -3,6 +3,8 @@
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
   "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
   "glyphs": [
     {
       "uid": "d73eceadda1f594cec0536087539afbf",
@@ -26,6 +28,12 @@
       "uid": "21e8b8217ed9d1a164fd02eff39c5388",
       "css": "minus-squared-small",
       "code": 72,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "e15f0d620a7897e2035c18c80142f6d9",
+      "css": "link-ext",
+      "code": 33,
       "src": "fontawesome"
     },
     {
