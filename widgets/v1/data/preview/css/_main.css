@@ -2,10 +2,13 @@
 body,table{font-family:"museo-sans","Helvetica Neue",Arial,Helvetica,Geneva,sans-serif;font-size:13px;}
 body,html{background:#eee;}
 a{color:#000;text-decoration:underline;display:block;margin:1em 4em;}
-#head{background:#333;color:#fff;padding:0;line-height:1.5em;font-size:15px;text-align:left;position:fixed;width:100%;top:0px;height:50px;}#head #spinner{background:url("images/activity_indicator_333.gif") no-repeat center;background-size:50%;width:50px;height:50px;position:absolute;}
-#head h1{display:inline-block;font-size:15px;line-height:50px;margin:0;margin-left:1em;}
-#head a{display:inline-block;color:#999;margin:0 1em;font-weight:100;}#head a:hover{color:#fff;}
-#head #logo{position:absolute;top:0px;right:20px;height:100%;width:140px;background:url("images/logo_columby.png") no-repeat center right;background-size:auto 50%;}
+#top,#bottom{position:fixed;height:5px;width:100%;margin:0;padding:0;background:url("images/header-bg-dataset.png") repeat;}
+#top{top:0px;}
+#bottom{bottom:0px;}
+#head{background:#333;color:#fff;padding:0;line-height:1.5em;font-size:15px;text-align:left;position:fixed;width:100%;top:5px;height:50px;}#head #spinner{background:url("images/activity_indicator_333.gif") no-repeat center;background-size:50%;width:50px;height:50px;position:absolute;}
+#head h1{display:inline-block;font-size:15px;line-height:50px;margin:0 1em 0 1em;}
+#head a{display:inline-block;color:#999;margin:0 .2em;font-weight:100;text-decoration:none;}#head a:hover{color:#fff;}
+#head #logo{position:absolute;top:15%;right:20px;height:70%;width:140px;background:url("images/logo_columby.png") no-repeat center right;background-size:auto 50%;}
 #error{margin-top:100px;text-align:center;}
 .iati{margin-top:60px;max-width:800px;margin:0 auto;}.iati .iati-frame{margin:60px 10px 20px 10px;overflow-x:hidden;background:transparent;width:auto;}.iati .iati-frame .spinner{background:#ffffff url("images/activity_indicator.gif") no-repeat center;background-size:50%;width:30px;height:30px;}
 .iati .iati-frame table{width:100%;background:transparent;border:1px solid #eee;margin:0;}.iati .iati-frame table tbody{width:auto;}
@@ -20,12 +23,20 @@ a{color:#000;text-decoration:underline;display:block;margin:1em 4em;}
 .iati .iati-frame>div>div>.rij{border-top:3px solid #eee;}
 .iati .iati-frame .rij{padding:.1em 2em;}.iati .iati-frame .rij table{margin:1em 0;}.iati .iati-frame .rij table td{width:50%;}
 .iati .iati-frame .rij>.rij{border:0px;margin-left:40px;}
-.iati .iati-frame .rij .klik{cursor:pointer;}
-.iati .iati-frame .rij h5{font-size:15px;}
+.iati .iati-frame .rij .klik{margin-bottom:3em;}
+.iati .iati-frame .rij h5{font-size:15px;}.iati .iati-frame .rij h5.open{cursor:pointer;}
 .iati .iati-frame .rij h5 b{font-weight:100;}
 .iati .iati-frame .rij :hover h5 i{color:#00f;}
 .iati .iati-frame .rij .transaction h5{color:#999;}
+.iati .iati-frame .rij table.details ul{padding-left:0;}.iati .iati-frame .rij table.details ul li{list-style-type:none;}
+.iati .iati-frame .rij table.transactions{margin-bottom:1.5em;}.iati .iati-frame .rij table.transactions tr td{width:25%;font-weight:bold;}
+.iati .iati-frame .rij .transaction-row{clear:both;display:inline-block;border-bottom:1px solid #eee;}.iati .iati-frame .rij .transaction-row .date{width:25%;float:left;}
+.iati .iati-frame .rij .transaction-row .type{width:25%;float:left;}
+.iati .iati-frame .rij .transaction-row .channel{width:25%;float:left;}
+.iati .iati-frame .rij .transaction-row .value{width:25%;float:left;}
+.iati .iati-frame .rij .transaction-row .inner{padding:0.5em 1em;}
 .iati .iati-frame .rij .description{color:#999;max-width:700px;margin:1em 0;}
+.iati .iati-frame .rij .description-full{color:#999;max-width:700px;margin:1em 0;margin-bottom:1.5em;cursor:pointer;}
 .iati .iati-frame .rij .attributes{max-width:700px;}.iati .iati-frame .rij .attributes .attribute{background:#eee;margin:0 2px 2px 0;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;line-height:1.5em;padding:0 0.5em;font-size:11px;display:inline-block;}.iati .iati-frame .rij .attributes .attribute label{color:#999;font-size:11px;display:inline;}
 .iati .iati-frame .activity{border-top:2px solid #eee;background:#fff;}
 .iati .iati-frame .contact,.iati .iati-frame .details,.iati .iati-frame .activities,.iati .iati-frame #paging{background:#eee;padding-left:1em;}.iati .iati-frame .contact h3,.iati .iati-frame .details h3,.iati .iati-frame .activities h3,.iati .iati-frame #paging h3{color:#999;}
