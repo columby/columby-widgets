@@ -3,8 +3,11 @@
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
   "hinting": true,
+<<<<<<< HEAD
   "units_per_em": 1000,
   "ascent": 850,
+=======
+>>>>>>> Github/master
   "glyphs": [
     {
       "uid": "d73eceadda1f594cec0536087539afbf",
@@ -31,12 +34,15 @@
       "src": "fontawesome"
     },
     {
+<<<<<<< HEAD
       "uid": "e15f0d620a7897e2035c18c80142f6d9",
       "css": "link-ext",
       "code": 33,
       "src": "fontawesome"
     },
     {
+=======
+>>>>>>> Github/master
       "uid": "3db5347bd219f3bce6025780f5d9ef45",
       "css": "tag",
       "code": 59148,
