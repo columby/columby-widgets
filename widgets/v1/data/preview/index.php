@@ -125,7 +125,7 @@ $root = "/".join($urlsplit,"/");
 
   <div class="description-full" ng-click="toggle()">
     <p ng-hide="descriptionExpanded" ng-repeat="desc in node.sub.description | limitTo:2 ">{{desc.value}}</p>
-    <p ng-hide="descriptionExpanded"><em>more ... </em></p>
+    <p ng-hide="descriptionExpanded" ng-show="node.sub.description"><em>more ... </em></p>
     <div class="full" ng-show="descriptionExpanded">
       <p ng-repeat="desc in node.sub.description">{{desc.value}}</p>
     </div>
@@ -180,10 +180,14 @@ $root = "/".join($urlsplit,"/");
         <tr>
           <td>Activity date</td>
           <td>
-            <li ng-repeat="org in node.sub['activity-date']">
-            {{org.attributes.type}}: {{org.attributes['iso-date']}}</li>
+            <ul>
+              <li ng-repeat="org in node.sub['activity-date']">
+                {{org.attributes.type}}: {{org.attributes['iso-date']}}
+              </li>
+            </ul>
           </td>
         </tr>
+
         <tr ng-repeat="org in node.sub['related-activity']">
           <td>related activity</td>
           <td> {{org.value}}</td>
@@ -192,33 +196,41 @@ $root = "/".join($urlsplit,"/");
         <tr>
           <td>Contact info</td>
           <td>
-            <li ng-repeat="contact in node.sub['contact-info'][0]">
-            Organization: {{contact[0].organisation[0].value}}<br />
-            Person name: {{contact[0]['person-name'][0].value}}<br/>
-            Telephone: {{contact[0].telephone[0].value}}<br/>
-            Email: {{contact[0].email[0].value}}<br/>
-            Mailing address: {{contact[0]['mailing-address'][0].value}}
-            </li>
+            <ul>
+              <li ng-repeat="contact in node.sub['contact-info'][0]">
+              Organization: {{contact[0].organisation[0].value}}<br />
+              Person name: {{contact[0]['person-name'][0].value}}<br/>
+              Telephone: {{contact[0].telephone[0].value}}<br/>
+              Email: {{contact[0].email[0].value}}<br/>
+              Mailing address: {{contact[0]['mailing-address'][0].value}}
+              </li>
+            </ul>
           </td>
         </tr>
+
         <tr>
           <td>Activity website</td>
           <td>
-            <li ng-repeat="site in node.sub['activity-website']">
-              <a href="{{site.value}}" target="_blank">{{site.value}}</a>
-            </li>
+            <ul>
+              <li ng-repeat="site in node.sub['activity-website']">
+                <a href="{{site.value}}" target="_blank">{{site.value}}</a>
+              </li>
+            </ul>
           </td>
-      </tr>
-      <tr>
-        <td>Budget</td>
-        <td>
-          <li ng-repeat="budget in node.sub.budget">
-            Period start: {{budget.budget[0]['period-start'][0].attributes['iso-date']}}<br/>
-            Period end: {{budget.budget[0]['period-end'][0].attributes['iso-date']}}<br/>
-            Value: {{budget.budget[0].value[0].value}}
-          </li>
-        </td>
-      </tr>
+        </tr>
+
+        <tr>
+          <td>Budget</td>
+          <td>
+            <ul>
+              <li ng-repeat="budget in node.sub.budget">
+                Period start: {{budget.budget[0]['period-start'][0].attributes['iso-date']}}<br/>
+                Period end: {{budget.budget[0]['period-end'][0].attributes['iso-date']}}<br/>
+                Value: {{budget.budget[0].value[0].value}}
+              </li>
+            </ul>
+          </td>
+        </tr>
       </table>
     </div>
   </div>
@@ -244,14 +256,15 @@ $root = "/".join($urlsplit,"/");
     
 
   <h5>Results</h5>
-  <ul class="results">
-    <li ng-repeat="item in node.sub.result" class="result">
-      <p>{{item.result[0].title[0].value}}</p>
+  <table class="results">
+    <tr ng-repeat="item in node.sub.result" class="result">
+      <td>
+      <p class="title">{{item.result[0].title[0].value}}</p>
       <ul class="indicator">
-        <li><p>Indicator: {{item.result[0].indicator[0].indicator[0].title[0].value}}</p></li>
+        <li><p><strong>Indicator: </strong>{{item.result[0].indicator[0].indicator[0].title[0].value}}</p></li>
         <ul class="period">
           <li>
-            <p>Period:<br> 
+            <p><strong>Period: </strong>
             Start: {{item.result[0].indicator[0].indicator[0].period[0].period[0]['period-start'][0].attributes['iso-date']}} - 
             End: {{item.result[0].indicator[0].indicator[0].period[0].period[0]['period-end'][0].attributes['iso-date']}} - 
             Target: {{item.result[0].indicator[0].indicator[0].period[0].period[0].target[0].attributes.value}} - 
@@ -259,8 +272,9 @@ $root = "/".join($urlsplit,"/");
           </li>
         </ul>
       </ul>
-    </li>
-  </ul>
+      </td>
+    </tr>
+  </table>
 
   
 

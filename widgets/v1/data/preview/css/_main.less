@@ -54,6 +54,10 @@ a {
 		width:50px;
 		height:50px;
 		position:absolute;
+		margin: 0 auto;
+		margin-top: 3em;
+		margin-bottom: 3em;
+		background-color: transparent;
 	}
 	h1 {
 		display:inline-block;
@@ -101,6 +105,10 @@ a {
 			background-size:50%;
 			width:30px;
 			height:30px;
+			margin: 0 auto;
+			margin-top: 3em;
+			margin-bottom: 3em;
+			background-color: transparent;
 		}
 		table {
 			width:100%;
@@ -216,6 +224,58 @@ a {
 			padding-left:1em;
 			h3 {
 				color:#999;
+			}
+		}
+		.rij {
+			table.details {
+				ul {
+					list-style-type: none;
+					padding-left: 0;
+					margin: 0;
+				}
+				a {
+					margin: 0;
+				}
+			}
+			table.transactions {
+				th {
+					line-height: 2;
+					text-align: left;
+					padding-left: 10px;
+					width: 25%;
+				}
+				td:nth-child(1) {
+					font-weight:normal;
+				}
+				&.header {
+					margin-bottom: 0;
+				}
+				&.body {
+					margin-top: 1px;
+					font-weight: normal;
+					td {
+						font-weight: normal;
+					}
+				}
+				td {
+					width: 25%;
+
+				}
+			}
+			table.results {
+				ul {
+					padding:0;
+					list-style-type: none;
+				}
+				ul.indicator{
+					margin-left: 10px;
+				}
+				td {
+					font-weight: normal;
+				}
+				td:nth-child(1){
+
+				}
 			}
 		}
 		#paging {

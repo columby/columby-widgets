@@ -17,6 +17,7 @@ angular.module('iati_widget',[
 })
 
 .run(function($window, $rootScope){
+  //console.log($window.location.hostname);
   var a;
   if(typeof Drupal!="undefined"){
     a = Drupal.settings.basePath;
@@ -63,7 +64,7 @@ angular.module('iati_widget.controllers',[])
       $rootScope.link_to_columby = $rootScope.root+"explore/dataset/"+response.data.nid;
       $rootScope.error = false;
     } else {
-      console.log('error, no data');
+      //console.log('error, no data');
       $rootScope.error = true;
       $rootScope.error_message = "Something went wrong loading the data.";
     }
@@ -93,9 +94,9 @@ angular.module('iati_widget.controllers',[])
     
     if((page<1 || page>last) == false){
       $scope.actloading = true;
-      console.log(page);
+      //console.log(page);
       dataService.retrieve($rootScope.uuid, '?xpath=//iati-activity&page='+page).then(function(response){
-        console.log(response.result);
+        //console.log(response.result);
         $scope.pager = response.pager;
         $scope.data = response.result;
         $scope.node.sub = response.result;
@@ -112,7 +113,6 @@ angular.module('iati_widget.services', [])
   return {
     retrieve:function(uuid){
       var url = $rootScope.apiRoot + 'api/v1/cms/' + uuid + ".json?type=info";
-
       var promise = $http({
         method: 'GET',
         url: url
